@@ -45,6 +45,7 @@
                 <tr>
                     <th>N°</th>
                     <th>Nombre</th>
+                    <th>Sector Educativo</th>
                     <th>Municipio</th>
                     <th>Bienvenidos</th>
                     <th>Casos de exito</th>
@@ -65,13 +66,15 @@
                     $row = mysqli_fetch_array($resultado);
                         $id_escuela = $row['id_escuela']; 
                         $nombre = $row['nombre_plantel'];
-                        $municipio = $row['municipio_id'];
+                        $sector_educativo = $row['sector_educativo'];
+                        $municipio = $row['municipio'];
                         $bienvenida = $row['bienvenidos']; 
                         $casoExito = $row['caso_exito'];
                 ?>
                 <tr>
                     <td><?php echo $id_escuela;?></td>
                     <td><?php echo $nombre;?></td>
+                    <td><?php echo $sector_educativo;?></td>
                     <td><?php echo $municipio;?></td>
                     <td><?php echo $bienvenida;?></td>
                     <td><?php echo $casoExito;?></td>
