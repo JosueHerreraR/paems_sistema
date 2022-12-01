@@ -27,13 +27,13 @@
                 //Cuando se presiona el boton Actualizar
                 $id_escuela = $_POST['id_escuela'];
                 $nombre_plantel = $_POST['nombre_plantel'];
+                $sector_educativo = $_POST['sector_educativo'];
                 $municipio = $_POST['municipio'];
                 $bienvenidos = $_POST['bienvenidos'];
                 $caso_exito = $_POST['caso_exito']; 
 
-
                 //Actualizacion de los datos
-                $sql_update = "UPDATE datos_escuelas SET nombre_plantel  = '$nombre_plantel' , municipio_id = $municipio, bienvenidos  = '$bienvenidos', caso_exito = '$caso_exito' WHERE id_escuela = '$id_escuela'";
+                $sql_update = "UPDATE datos_escuelas SET nombre_plantel  = '$nombre_plantel', sector_educativo = '$sector_educativo', municipio = '$municipio', bienvenidos  = '$bienvenidos', caso_exito = '$caso_exito' WHERE id_escuela = '$id_escuela'";
                 $resultadoUpdate = mysqli_query($conexion, $sql_update);
 
                 if($resultadoUpdate){
@@ -73,28 +73,32 @@
 
             <div class="form">
                 <form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
-                    <h1>Editar Datps Escolares</h1>
-                    <label for="">Nombre:</label>
+                    <h1>Editar Datos Escolares</h1>
+                    <label for="nombre_plantel">Nombre:</label>
                     <input type="text" name="nombre_plantel" class="field" value="<?php echo $nombre_plantel?>">
-                    <label for="">Video 1 (Bienvenida):</label>
+                    <label for="bienvenidos">Video 1 (Bienvenida):</label>
                     <input type="text" name="bienvenidos" class="field" value="<?php echo $bienvenidos?>">
-                    <label for="">Municipio:</label>
-                    <select name="municipio" id="municipio" class="field" required>
-                        <?php
-                            include '../database/conexion.php';
-                                                    
-                            $sql_municipio = "SELECT * FROM municipios ORDER BY id_municipios";
-                            $data_municipio = mysqli_query($conexion, $sql_municipio);
-                            while ($row = mysqli_fetch_array($data_municipio)){
-                                $id = $row['id_municipios']; 
-                                $nombre = $row['municipio'];
-                        ?>
-                            <option value="<?php echo $id ?>"><?php echo $nombre?></option>
-                        <?php
-                            }
-                        ?>
+                    <label for="sector_educativo">Sector Educativo</label>
+                    <select name="sector_educativo" class="field" id="municipio" required>
+                        <option value="Público">Público</option>
+                        <option value="Privado">Privado</option>
+                        <option value="Modular">Modular</option>
                     </select>
-                    <label for="">Video 2 (Casos de Exito):</label>
+                    <label for="municipio">Municipio:</label>
+                    <select name="municipio" class="field" id="municipio" required>
+                        <option value="Bacalar">Bacalar</option>
+                        <option value="Benito Juárez">Benito Juárez</option>
+                        <option value="Cozumel">Cozumel</option>
+                        <option value="Felipe Carrillo Puerto">Felipe Carrillo Puerto</option>
+                        <option value="Isla Mujeres">Isla Mujeres</option>
+                        <option value="José María Morelos">José María Morelos</option>
+                        <option value="Lázaro Cárdenas">Lázaro Cardenas</option>
+                        <option value="othon_p_blanco">Othón P. Blanco</option>
+                        <option value="Puerto Morelos">Puerto Morelos</option>
+                        <option value="Solidaridad">Solidaridad</option>
+                        <option value="tulum">Tulum</option>
+                    </select>
+                    <label for="caso_exito">Video 2 (Casos de Exito):</label>
                     <input type="text" name="caso_exito" class="field" value="<?php echo $caso_exito?>" id="caso_exito">
 
                     <input type="hidden" name="id_escuela" value="<?php echo $id_escuela?>">
