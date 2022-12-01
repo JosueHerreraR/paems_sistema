@@ -8,6 +8,7 @@
     --color-texto: #000;
     --color-boton: #AB0A3D;
     --hover-color: #FFC845;
+    --field-color: #CCC;
 }
 form{
     background-color: whitesmoke;
@@ -29,30 +30,27 @@ label{
     font-size: 14px;
 }
 .field{
-    border: solid 1px #ccc;
+    border: solid 1px var(--field-color);
     padding: 10px; 
-}
-.field:focus{
-    border-color: #18A383;
 }
 h1{
     text-align: center;
     color: var(--color-texto);
+    padding: 18px;
 }
 .center-content{
     text-align: center;
 }
 .btn{
-	border-radius: 5px;
-	display: inline-block;
-	padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 15px;
     margin: 15px;
     width: auto;
-	box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     background-color: var(--color-boton);
     color: var(--color-texto);
 }
 .btn:hover{
     background-color: var(--hover-color);
-	
 }
