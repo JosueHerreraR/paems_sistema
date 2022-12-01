@@ -36,10 +36,10 @@
             move_uploaded_file($_FILES['becas']['tmp_name'],$carpeta_destino.$nombre_pdf_becas);
             move_uploaded_file($_FILES['oferta_academica']['tmp_name'],$carpeta_destino.$nombre_pdf_oferta);
         } else{
-            echo "Solo se pueden aceptar el formato PDF";
+            echo "<div>Solo se pueden aceptar el formato PDF</div><br>";
         }
     } else{
-        echo "Error = El tamaño de uno de los PDF es demasiado grande.";
+        echo "<div>Error = El tamaño de uno de los PDF es demasiado grande.</div><br>";
     }
 
     //Recibe los datos del Logo Institucional:
@@ -55,10 +55,10 @@
             //Mover la imagen del directorio temporal al directorio escogido:
             move_uploaded_file($_FILES['logo-escolar']['tmp_name'],$carpeta_destino.$nombre_logo);
         } else{
-            echo "Para el Logo Institucional => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb";
+            echo "<div>Para el Logo Institucional => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb</div><br>";
         }
     } else{
-        echo "Error = El tamaño de la imagen del 'Logo Institucional' es demasiado grande.";
+        echo "<div>Error = El tamaño de la imagen del 'Logo Institucional' es demasiado grande.</div><br>";
     }    
 
     //Recibe los datos de las imagenes de las Instalaciones:
@@ -84,10 +84,10 @@
             move_uploaded_file($_FILES['inst2']['tmp_name'],$carpeta_destino.$nombre_inst_2);
             move_uploaded_file($_FILES['inst3']['tmp_name'],$carpeta_destino.$nombre_inst_3);
         } else{
-            echo "Para las Instalaciones => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb";
+            echo "<div>Para las Instalaciones => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb</div><br>";
         }
     } else{
-        echo "Error = El tamaño de una de las imagenes 'Institucionales' es demasiado grande.";
+        echo "<div>Error = El tamaño de una de las imagenes 'Institucionales' es demasiado grande.</div><br>";
     }
 
     //Recibe los datos de las imagenes de las Actividades Culturales:
@@ -113,10 +113,10 @@
             move_uploaded_file($_FILES['cultura2']['tmp_name'],$carpeta_destino.$nombre_cultura_2);
             move_uploaded_file($_FILES['cultura3']['tmp_name'],$carpeta_destino.$nombre_cultura_3);
         } else{
-            echo "Para las Actividades Culturales => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb";
+            echo "<div>Para las Actividades Culturales => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb</div><br>";
         }
     } else{
-        echo "Error = El tamaño de una de las imagenes 'Culturales' es demasiado grande.";
+        echo "<div>Error = El tamaño de una de las imagenes 'Culturales' es demasiado grande.</div><br>";
     }
 
     //Recibe los datos de las imagenes de las Actividades Deportivas:
@@ -130,7 +130,7 @@
     $tipo_deporte_3 = $_FILES['deporte3']['type'];
     $tamaño_deporte_3 = $_FILES['deporte3']['size'];
 
-    if($tamaño_deporte_1 || $tamaño_deporte_2 || $tamaño_deporte <= 26214400){
+    if($tamaño_deporte_1 || $tamaño_deporte_2 || $tamaño_deporte_3 <= 26214400){
         if($tipo_deporte_1 == "image/jpeg" || $tipo_deporte_1 =="image/jpg" || $tipo_deporte_1 == "image/png" || $tipo_deporte_1 =="image/webb" ||
            $tipo_deporte_2 == "image/jpeg" || $tipo_deporte_2 =="image/jpg" || $tipo_deporte_2 == "image/png" || $tipo_deporte_2 =="image/webb" ||
            $tipo_deporte_3 == "image/jpeg" || $tipo_deporte_3 =="image/jpg" || $tipo_deporte_3 == "image/png" || $tipo_deporte_3 =="image/webb"){
@@ -142,10 +142,10 @@
             move_uploaded_file($_FILES['deporte2']['tmp_name'],$carpeta_destino.$nombre_deporte_2);
             move_uploaded_file($_FILES['deporte3']['tmp_name'],$carpeta_destino.$nombre_deporte_3);
         } else{
-            echo "Para las Actividades Deportivas => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb";
+            echo "<div>Para las Actividades Deportivas => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb</div><br>";
         }
     } else{
-        echo "Error = El tamaño de una de las imagenes 'Deportivas' es demasiado grande.";
+        echo "<div>Error = El tamaño de una de las imagenes 'Deportivas' es demasiado grande.</div><br>";
     }
 
     //Recibe los datos de las imagenes de las Actividades Extracurriculares:
@@ -171,10 +171,10 @@
             move_uploaded_file($_FILES['extra2']['tmp_name'],$carpeta_destino.$nombre_extra_2);
             move_uploaded_file($_FILES['extra3']['tmp_name'],$carpeta_destino.$nombre_extra_3);
         } else{
-            echo "Para las Actividades Extracurriculares => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb";
+            echo "<div>Para las Actividades Extracurriculares => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb</div><br>";
         }
     } else{
-        echo "Error = El tamaño de una de las imagenes 'Extracurriculares' es demasiado grande.";
+        echo "<div>Error = El tamaño de una de las imagenes 'Extracurriculares' es demasiado grande.</div><br>";
     }
 
     //Recibe los datos de las imagenes del Pabellon Tecnológico:
@@ -188,7 +188,7 @@
     $tipo_pabellon_3 = $_FILES['pabellon3']['type'];
     $tamaño_pabellon_3 = $_FILES['pabellon3']['size'];
 
-    if($tamaño_pabellon_1 || $tamaño_pabellon_2 || $tamaño_pabellon <= 26214400){
+    if($tamaño_pabellon_1 || $tamaño_pabellon_2 || $tamaño_pabellon_3 <= 26214400){
         if($tipo_pabellon_1 == "image/jpeg" || $tipo_pabellon_1 =="image/jpg" || $tipo_pabellon_1 == "image/png" || $tipo_pabellon_1 =="image/webb" ||
            $tipo_pabellon_2 == "image/jpeg" || $tipo_pabellon_2 =="image/jpg" || $tipo_pabellon_2 == "image/png" || $tipo_pabellon_2 =="image/webb" ||
            $tipo_pabellon_3 == "image/jpeg" || $tipo_pabellon_3 =="image/jpg" || $tipo_pabellon_3 == "image/png" || $tipo_pabellon_3 =="image/webb"){
@@ -200,17 +200,17 @@
             move_uploaded_file($_FILES['pabellon2']['tmp_name'],$carpeta_destino.$nombre_pabellon_2);
             move_uploaded_file($_FILES['pabellon3']['tmp_name'],$carpeta_destino.$nombre_pabellon_3);
         } else{
-            echo "Para los Pabellones Tecnológicos => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb";
+            echo "<div>Para los Pabellones Tecnológicos => solo se pueden subir los siguientes formatos de imagen: .jpg / .jpeg / .png / .webb</div><br>";
         }
     } else{
-        echo "Error = El tamaño de una de las imagenes del 'Pabellon Tecnológico' es demasiado grande.";
+        echo "<div>Error = El tamaño de una de las imagenes del 'Pabellon Tecnológico' es demasiado grande.</div><br>";
     }
 
     //Conexión a la base de datos
     include "../database/conexion.php";
     
-    $sql_datos = "INSERT INTO datos_escuelas (nombre_plantel, sector_id, municipio_id, bienvenidos, becas, oferta_educativa, caso_exito) 
-        VALUES ('$nombre_plantel', $sector_educativo, $municipio, '$bienvenidos', '$nombre_pdf_becas', '$nombre_pdf_oferta', '$caso_exito')";
+    $sql_datos = "INSERT INTO datos_escuelas (nombre_plantel, sector_educativo, municipio, bienvenidos, becas, oferta_educativa, caso_exito) 
+        VALUES ('$nombre_plantel', '$sector_educativo', '$municipio', '$bienvenidos', '$nombre_pdf_becas', '$nombre_pdf_oferta', '$caso_exito')";
     $resultado_1 = mysqli_query($conexion, $sql_datos); 
 
     if($resultado_1 == 1){
