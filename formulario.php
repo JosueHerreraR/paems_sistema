@@ -75,39 +75,29 @@
                                     <input type="text" name="nombre_plantel" placeholder="Nombre de la institución academica" class="f1-first-name form-control" id="nombre">
                                 </div>
                                 <div class="form-group">
-                    			    <label for="sector_educativo">Municipio</label>
+                    			    <label for="sector_educativo">Sector Educativo</label>
                                     <select name="sector_educativo" class="f1-first-name form-control" id="municipio" required>
-                                        <?php
-                                            include 'database/conexion.php';
-                                            
-                                            $sql_sector = "SELECT * FROM sector_educativo ORDER BY id_sector";
-                                            $data_sector = mysqli_query($conexion, $sql_sector);
-                                            while ($row = mysqli_fetch_array($data_sector)){
-                                                $id = $row['id_sector']; 
-                                                $nombre = $row['sector_educativo'];
-                                        ?>
-                                            <option value="<?php echo $id ?>"><?php echo $nombre?></option>
-                                        <?php
-                                            }
-                                        ?>
+                                        <option value="Sin selección">No se ha seleccionado nada</option>
+                                        <option value="Público">Público</option>
+                                        <option value="Privado">Privado</option>
+                                        <option value="Modular">Modular</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                     			    <label for="municipio">Municipio</label>
                                     <select name="municipio" class="f1-first-name form-control" id="municipio" required>
-                                        <?php
-                                            include 'database/conexion.php';
-                                            
-                                            $sql_municipio = "SELECT * FROM municipios ORDER BY id_municipios";
-                                            $data_municipio = mysqli_query($conexion, $sql_municipio);
-                                            while ($row = mysqli_fetch_array($data_municipio)){
-                                                $id = $row['id_municipios']; 
-                                                $nombre = $row['municipio'];
-                                        ?>
-                                            <option value="<?php echo $id ?>"><?php echo $nombre?></option>
-                                        <?php
-                                            }
-                                        ?>
+                                        <option value="Sin selección">No se ha seleccionado nada</option>
+                                        <option value="Bacalar">Bacalar</option>
+                                        <option value="Benito Juárez">Benito Juárez</option>
+                                        <option value="Cozumel">Cozumel</option>
+                                        <option value="Felipe Carrillo Puerto">Felipe Carrillo Puerto</option>
+                                        <option value="Isla Mujeres">Isla Mujeres</option>
+                                        <option value="José María Morelos">José María Morelos</option>
+                                        <option value="Lázaro Cárdenas">Lázaro Cardenas</option>
+                                        <option value="othon_p_blanco">Othón P. Blanco</option>
+                                        <option value="Puerto Morelos">Puerto Morelos</option>
+                                        <option value="Solidaridad">Solidaridad</option>
+                                        <option value="tulum">Tulum</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
